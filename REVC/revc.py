@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 
 def complement_per_base(base_char: str) -> str:
     """
@@ -47,20 +49,19 @@ def main() -> None:
     the correct answer.
     """
 
-    # here are the inputs: a DNA nucleotide string and the expected answer
-    dna_string = "AAAACCCGGT"
-    expected_answer = "ACCGGGTTTT"
+    # get the input dataset from the command line
+    input_file = sys.argv[1]
+
+    # read the rosalind input
+    dna_string: str
+    with open(input_file, "r", encoding="utf8") as input_handle:
+        dna_string = input_handle.read().splitlines()[0]
 
     # get the reverse complement
     my_answer = get_reverse_complement(dna_string)
 
-    # is my answer correct?
-    assert (
-        my_answer == expected_answer
-    ), f"My answer '{my_answer}' was incorrect. Try again!"
-
-    # if so, print out the answer
-    print(f"Successfully got the reverse complement '{dna_string}': '{my_answer}'")
+    # print the answer
+    print(f"My answer is:\n{my_answer}")
 
 
 if __name__ == "__main__":

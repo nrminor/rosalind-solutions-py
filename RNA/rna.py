@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 
 def transcribe_dna(dna_string: str) -> str:
     """
@@ -20,22 +22,19 @@ def main() -> None:
     the correct answer.
     """
 
-    # here are the inputs: a DNA nucleotide string and the expected answer
-    dna_string = "GATGGAACTTGACTACGTAAATT"
-    expected_answer = "GAUGGAACUUGACUACGUAAAUU"
+    # get the input dataset from the command line
+    input_file = sys.argv[1]
+
+    # read the rosalind input
+    dna_string: str
+    with open(input_file, "r", encoding="utf8") as input_handle:
+        dna_string = input_handle.read().splitlines()[0]
 
     # transcribe the DNA into RNA
     my_answer = transcribe_dna(dna_string)
 
-    # is my answer correct?
-    assert (
-        my_answer == expected_answer
-    ), f"My answer '{my_answer}' was incorrect. Try again!"
-
-    # if so, print out the answer
-    print(
-        f"Successfully transcribed the DNA sequence '{dna_string}' into RNA: '{my_answer}'"
-    )
+    # print the answer
+    print(f"My answer is:\n{my_answer}")
 
 
 if __name__ == "__main__":

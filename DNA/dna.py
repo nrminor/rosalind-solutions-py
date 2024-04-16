@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
+import sys
 from dataclasses import dataclass
-from typing import List, Optional, Tuple
+from typing import List, Optional
 
 
 @dataclass
@@ -30,6 +31,9 @@ def count_bases_by_type(
     bases and recursively count the occurrence of each base, saving the
     final tallies in dataclass `NucleotideBases`.
     """
+    if len(bases) == 0:
+        return base_counts
+
     # if on the first base, which is to say the base at the end
     # of the DNA base list, next will have its default value, None. To
     # get started, we shadow/overwrite next with the index of the rightmost
@@ -68,33 +72,16 @@ def count_bases_by_type(
     return count_bases_by_type(bases, base_counts, next - 1)
 
 
-def main() -> None:
+def print_answer_report(final_tallies: NucleotideBases) -> None:
     """
-    Take the input DNA string, tally each base, and check if the tallies
-    are the correct answer.
+    Print a formatted report of the tallies for each base and format the
+    answer.
     """
-
-    # here are the inputs: a DNA nucleotide string and the expected answer
-    dna_string = (
-        "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
-    )
-    expected_answer = "20 12 17 21"
-
-    # convert the long string to a list of characters
-    base_list = [*dna_string]
-
-    # retrieve my final tally and format my answer
-    final_tallies = count_bases_by_type(base_list)
     my_answer = (
         f"{final_tallies.A} {final_tallies.C} {final_tallies.G} {final_tallies.T}"
     )
 
-    # is my answer correct?
-    assert (
-        my_answer == expected_answer
-    ), f"My answer '{my_answer}' was incorrect. Try again!"
-
-    # if so, print out the tallies:
+    # print out the tallies:
     print("Our final tally of bases is:")
     print("----------------------------")
     print(f"Adenines: {final_tallies.A}")
@@ -104,6 +91,30 @@ def main() -> None:
 
     print("\n\nAnd to format like the problem asked:")
     print(my_answer)
+
+
+def main() -> None:
+    """
+    Take the input DNA string, tally each base, and check if the tallies
+    are the correct answer.
+    """
+
+    # get the input dataset from the command line
+    input_file = sys.argv[1]
+
+    # read the rosalind input
+    dna_string: str
+    with open(input_file, "r", encoding="utf8") as input_handle:
+        dna_string = input_handle.read().splitlines()[0]
+
+    # convert the long string to a list of characters
+    base_list = [*dna_string]
+
+    # retrieve my final tally and format my answer
+    final_tallies = count_bases_by_type(base_list)
+
+    # print out my answer
+    print_answer_report(final_tallies)
 
 
 if __name__ == "__main__":

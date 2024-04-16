@@ -3,3 +3,5 @@
 
 *.fasta
 .rosalind_env/
+.ruff_cache
+__pycache__
