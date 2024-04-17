@@ -98,7 +98,6 @@ def main() -> None:
     Take the input DNA string, tally each base, and check if the tallies
     are the correct answer.
     """
-
     # get the input dataset from the command line
     input_file = sys.argv[1]
 
