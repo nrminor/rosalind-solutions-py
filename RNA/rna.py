@@ -21,7 +21,6 @@ def main() -> None:
     Take the input DNA string, transcribe into RNA, and check that it's
     the correct answer.
     """
-
     # get the input dataset from the command line
     input_file = sys.argv[1]
 
