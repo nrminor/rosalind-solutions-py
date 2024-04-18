@@ -85,7 +85,7 @@ def print_answer_report(final_tallies: NucleotideBases) -> None:
     print("Our final tally of bases is:")
     print("----------------------------")
     print(f"Adenines: {final_tallies.A}")
-    print(f"Threonines: {final_tallies.T}")
+    print(f"Thymine: {final_tallies.T}")
     print(f"Guanines: {final_tallies.G}")
     print(f"Cytosines: {final_tallies.C}")
 

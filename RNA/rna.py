@@ -10,8 +10,7 @@ def transcribe_dna(dna_string: str) -> str:
     of the bases unchanged. Then, join them into a single string again and
     return.
     """
-    dna_bases = [*dna_string]
-    rna_bases = ["U" if base == "T" else base for base in dna_bases]
+    rna_bases = ["U" if base == "T" else base for base in dna_string]
 
     return "".join(rna_bases)
 
