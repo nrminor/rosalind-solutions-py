@@ -4,6 +4,7 @@ Like how fly-fishing is not the direct path to catching a fish but is gratifying
 
 -   functional programming idioms like recursive functions and pattern matching
 -   dataclass usage
+-   validation with `pydantic`
 -   fluent interface pipelines, where possible
 -   Polars expressions, again where possible
 -   test-driven development with `pytest`

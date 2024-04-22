@@ -7,7 +7,8 @@ from typing import List, Tuple
 
 def check_seqs(test_seqs: List[str]) -> Tuple[str, str]:
     """
-    TODO
+    Check that only two sequences were found in the provided file, and that both
+    sequences are the same length.
     """
 
     assert (
@@ -26,7 +27,7 @@ def check_seqs(test_seqs: List[str]) -> Tuple[str, str]:
 
 def compute_hamming_distance(seq1: str, seq2: str) -> int:
     """
-    TODO
+    Count the number of bases that don't match between the two sequences.
     """
     distance = 0
     for seq1_base, seq2_base in zip(seq1, seq2):
@@ -36,6 +37,9 @@ def compute_hamming_distance(seq1: str, seq2: str) -> int:
 
 
 def main() -> None:
+    """
+    Script entrypoint coordinating the flow of data through the above functions.
+    """
     # get the input dataset from the command line
     input_file = sys.argv[1]
 
