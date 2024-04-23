@@ -15,8 +15,7 @@ def check_seqs(test_seqs: List[str]) -> Tuple[str, str]:
         len(test_seqs) == 2
     ), f"{len(test_seqs)} sequences provided whereas 2 were expected."
 
-    seq1 = test_seqs[0]
-    seq2 = test_seqs[1]
+    seq1, seq2 = test_seqs
 
     assert (
         len(seq1) == len(seq2)
