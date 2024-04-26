@@ -42,7 +42,7 @@ def main() -> None:
     Script entrypoint coordinating the flow of data through the above functions
     """
     # read the input file
-    input_file = sys.argv[0]
+    input_file = sys.argv[1]
 
     # read the rosalind input file
     input_list: List[str] = []
