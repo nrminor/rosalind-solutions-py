@@ -2,6 +2,7 @@
 ._*
 
 *.fasta
+rosalind_*.txt
 .rosalind_env/
 .venv/
 .ruff_cache
