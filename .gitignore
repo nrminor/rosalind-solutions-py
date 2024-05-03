@@ -7,3 +7,4 @@ rosalind_*.txt
 .venv/
 .ruff_cache
 __pycache__
+inputs/
