@@ -7,9 +7,9 @@ Like how fly-fishing is not the direct path to catching a fish but is gratifying
 -   validation with `pydantic`
 -   fluent interface pipelines, where possible
 -   Polars expressions, again where possible
--   test-driven development with `pytest`
+-   test-driven development with `pytest` and maybe even `hypothesis`
 -   environment management with `uv`
--   Vim and/or Helix keybindings
+-   Helix keybindings
 -   &c.
 
 For these reasons, this is repo is a maximalist approach to Rosalind problems, where each problem is an opportunity to solve the problem itself, but also to get more reps on the above items. Look elsewhere for a minimalist approach, where each problem is solved in as few of lines as possible.
