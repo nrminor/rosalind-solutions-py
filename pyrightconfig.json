@@ -1,4 +1,4 @@
 {
     "venvPath": ".",
-    "venv": ".rosalind_env"
+    "venv": ".venv"
 }

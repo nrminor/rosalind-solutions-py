@@ -5,7 +5,7 @@
 {
     "detect_venv": {
         "on": {
-            "directories": [".rosalind_env"],
+            "directories": [".venv"],
             "activate_script": "default"
         }
     }
