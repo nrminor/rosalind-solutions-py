@@ -22,15 +22,13 @@ class RecordWithGC:
     gc: float
 
 
-def parse_fasta_records(fasta_file: str) -> List[SeqRecord]:
+def parse_fasta_records(fasta_file: Path) -> List[SeqRecord]:
     """
     Eagerly parse all records in the short input FASTA into a list that can be
     sorted by GC-content downstream while making sure that records could
     actually be parsed.
     """
-    fasta_path = Path(fasta_file)
-
-    records = list(SeqIO.parse(fasta_path, "fasta"))
+    records = list(SeqIO.parse(fasta_file, "fasta"))
 
     assert (
         len(records) > 1
@@ -90,7 +88,7 @@ def main() -> None:
     ), f"Provided fasta file {fasta_file} does not exist."
 
     # parse out the records into a list of Biopython seqrecords
-    records = parse_fasta_records(fasta_file)
+    records = parse_fasta_records(Path(fasta_file))
 
     # parse out which has the most GC-content
     max_gc_record = find_max_gc_content(records)

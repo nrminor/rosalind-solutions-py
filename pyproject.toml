@@ -1,0 +1,25 @@
+[project]
+name = "rosalind-solutions-py"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["biopython>=1.84"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+  "marimo[sql]>=0.8.13",
+  "pre-commit>=3.8.0",
+  "pydantic>=0.6.4",
+  "pytest",
+  "ruff",
+  "tox>=4.18.1",
+]
+compile-bytecode = true
+
+[project.scripts]
+"ros-py" = "rosalind_solutions_py.__main__:main"

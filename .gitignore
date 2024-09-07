@@ -8,3 +8,4 @@ rosalind_*.txt
 .ruff_cache
 __pycache__
 inputs/
+.pytest_cache
